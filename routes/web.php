@@ -23,3 +23,7 @@ Route::post('/contact/all/{id}/update', [ContactController::class, 'updateMessag
 Route::get('/contact/all/{id}/delete', [ContactController::class, 'deleteMessage'])->name('contact-delete');
 Route::get('/contact/all', [ContactController::class, 'allData'])->name('contact-data');
 Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact-form');
+
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
