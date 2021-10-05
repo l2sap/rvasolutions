@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Account\IndexController as AccountController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ Route::post('/contact/all/{id}/update', [ContactController::class, 'updateMessag
 Route::get('/contact/all/{id}/delete', [ContactController::class, 'deleteMessage'])->name('contact-delete');
 Route::get('/contact/all', [ContactController::class, 'allData'])->name('contact-data');
 Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact-form');
+Route::get('/account', AccountController::class)->name('account');
 
 
 Auth::routes();
