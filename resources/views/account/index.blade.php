@@ -9,6 +9,8 @@
 
 <p>Your email: <b>{{ $email }}</b></p>
 
+<p>Balance: <b>{{ Auth::user()->balance }}</b></p>
+
 @endsection
 
 @section('aside')
