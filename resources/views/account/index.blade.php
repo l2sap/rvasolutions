@@ -11,6 +11,14 @@
 
 <p>Balance: <b>{{ Auth::user()->balance }}</b></p>
 
+<hr>
+
+Other users: <br>
+
+@foreach($data as $user)
+{{ $user->name }} - {{ $user->balance }} <br>
+@endforeach
+
 @endsection
 
 @section('aside')

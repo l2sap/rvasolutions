@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
+use App\Models\User;
 
 class IndexController extends Controller
 {
@@ -20,6 +21,10 @@ class IndexController extends Controller
         $asterisk .= '*'; 
         $email = substr_replace($email, $asterisk, 1, $length);
 
-        return view('account.index', ['email' => $email]);
+        $users = new User();
+
+
+        return view('account.index', ['email' => $email, 'data' => $users->get()->where('id', '<>', FacadesAuth::user()->id)]);
     }
+
 }
